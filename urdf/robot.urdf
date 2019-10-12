@@ -77,6 +77,12 @@
 	<origin rpy="-1.57079 0 0" xyz="-0.1 0.4 0"/>
     </collision>
   </link>
+  <joint name="base_wheel_left_joint" type="fixed">
+	<parent link="base"/>
+	<child link="wheel_left"/>
+	<origin xyz="-0.1 0.4 0"/>
+	<limit velocity = "1" effort = "1"/>
+  </joint>
   <joint name="base_laser_vert_bottom_joint" type="fixed">
     <parent link="base"/>
     <child link="laser_vert_bottom"/>
@@ -96,11 +102,5 @@
     <parent link="base"/>
     <child link="laser_horiz"/>
     <origin xyz="0.2325 0.0001 1.9201"/>
-  </joint>
-  <joint name="base_wheel_left" type="fixed">
-	<parent link="base"/>
-	<child link="wheel_left"/>
-	<origin xyz="-0.1 0.4 0"/>
-	<limit velocity = "1" effort = "1"/>
   </joint>
 </robot>

@@ -1,0 +1,18 @@
+<launch>
+	<!-- What is the name of the file to use? This can be passed into the launch
+	file. -->
+	<arg name="filename" default="robot.urdf" />
+	<!-- The full path of the URDF file can be passed into the launch file instead.
+	-->
+	<arg name="file" default="$(find Lab4)/urdf/$(arg filename)" />
+	<!-- Use the file argument as the name of the file used lto set the
+	/robot_description parameter on the parameter server -->
+	<param name="robot_description" textfile="$(arg file)" />
+	<!-- Run the robot_state_publisher. -->
+	<node pkg="robot_state_publisher" type="robot_state_publisher"
+	name="robot_state_publisher" />
+	<!-- Run RVIZ and use a specific configuration file. If RVIZ is closed, close
+	everything. -->
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find
+	Lab4)/config/config.rviz" required="true" />
+</launch>
