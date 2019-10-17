@@ -296,9 +296,10 @@
     </collision>
   </link>
   <joint name="base_wheel_left_joint" type="continuous">
+    <axis xyz="0 1 0"/>
     <parent link="base"/>
     <child link="wheel_left"/>
-    <origin rpy="-1.57079 0 0" xyz="-0.1 0.4 -0.0"/>
+    <origin rpy="0 -1.57079 0" xyz="-0.1 0.2 -0.0"/>
     <limit effort="1" velocity="1"/>
   </joint>
   <link name="wheel_right">
@@ -316,9 +317,10 @@
     </collision>
   </link>
   <joint name="base_wheel_right_joint" type="continuous">
+    <axis xyz="0 1 0"/>
     <parent link="base"/>
     <child link="wheel_right"/>
-    <origin rpy="-1.57079 0 0" xyz="-0.1 -0.4 -0.0"/>
+    <origin rpy="0 -1.57079 0" xyz="-0.1 -0.2 -0.0"/>
     <limit effort="1" velocity="1"/>
   </joint>
   <link name="wheel_center">
@@ -332,13 +334,14 @@
       <geometry>
         <cylinder length="0.05" radius="0.15"/>
       </geometry>
-      <origin rpy="-1.57079 0 0" xyz="0.1 0.0 -0.025"/>
+      <origin rpy="-1.57079 0 0" xyz="0.0 0.0 -0.025"/>
     </collision>
   </link>
   <joint name="base_wheel_center_joint" type="continuous">
+    <axis xyz="0 1 0"/>
     <parent link="base"/>
     <child link="wheel_center"/>
-    <origin rpy="-1.57079 0 0" xyz="0.1 0.0 -0.025"/>
+    <origin rpy="0 -1.57079 0" xyz="0.1 0.0 -0.025"/>
     <limit effort="1" velocity="1"/>
   </joint>
 </robot>
